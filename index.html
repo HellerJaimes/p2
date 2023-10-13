@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ejercicio1 html</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main>
+        <h1 class="title">Calcular Indice de Masa Corporal</h1>
+        <p class="description">Bienvenido usuario por favor digite la siguiente información</p>
+
+
+    <script type="text/javascript">
+        function IMC() {
+            var x, y, IMC, text;
+            x = document.getElementById("num1").value;
+            y = document.getElementById("num2").value;
+            if (isNaN(x)) {
+                text = "Por favor ingrese datos numéricos en los campos";
+            } else {
+                IMC = parseFloat(y) / (parseFloat(x) * parseFloat(x));
+                text = IMC;
+            }
+            document.getElementById("IMC").innerHTML = text;
+
+            mostrarResultado(IMC);
+        }
+
+        function mostrarResultado(IMC) {
+            var resultado = document.getElementById("resultado");
+            if (isNaN(IMC)) {
+                resultado.textContent = "Datos incorrectos";
+            } else if (IMC < 18.5) {
+                resultado.textContent = "Usted tiene bajo peso";
+            } else if (IMC >= 18.5 && IMC <= 24.9) {
+                resultado.textContent = "Usted tiene peso normal";
+            } else if (IMC >= 25 && IMC <= 29.9) {
+                resultado.textContent = "Usted tiene sobrepeso";
+            } else if (IMC >= 30 && IMC <= 34.9) {
+                resultado.textContent = "Usted tiene obesidad tipo I";
+            } else if (IMC >= 35 && IMC <= 39.9) {
+                resultado.textContent = "Usted tiene obesidad tipo II";
+            } else if (IMC >= 40 && IMC <= 49.9) {
+                resultado.textContent = "Usted tiene obesidad tipo III";
+            } else {
+                resultado.textContent = "Usted tiene obesidad tipo IV";
+            }
+        }
+    </script>
+
+    <br>
+        <p class="description">Ingrese su estatura en metros (ejemplo = 1.78m)</p>
+        <input type="text" placeholder="ESTATURA" id="num1" />
+        <p class="description">Ingrese su peso en kilogramos</p>
+        <input type="text" id="num2" placeholder="PESO">
+        <button class="description" type="button" onclick="IMC()">Calcular IMC</button>
+            <p class="description">Su puntaje de IMC es:</p>
+    <p class="description" id="IMC"></p>
+    <p class="description" id="resultado"></p>
+  </main>
+
+</body>
+
+</html>
