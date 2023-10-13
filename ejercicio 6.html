@@ -19,10 +19,11 @@
                     contraseña = "secreto";
                     mensaje =document.getElementById("mensaje");
                     intento = document.getElementById("contraseña").value;
-                    while (intento === contraseña) {
-                        mensaje.innerHTML = "Contraseña correcta, bienvenido";
+                    while (intento !== contraseña) {
+                        mensaje.innerHTML = "Contraseña incorrecta, intente de nuevo.";
+                        intento = prompt("Contraseña incorrecta. Intente de nuevo:");
                     }
-                    mensaje.innerHTML = "Contraseña incorrecta, intente de nuevo.";
+                    mensaje.innerHTML = "Contraseña correcta, bienvenido";
                     
                 }
             </script>
@@ -52,7 +53,7 @@
          }
     </script>
     </div>
-    </div>
+
     <input type="text" placeholder="Numero" id="numero" />
     <button class="description" type="button" onclick="Digitos()">Calcular Digitos de un numero</button>
     <p class="description" id="resultado"></p>  
@@ -77,7 +78,7 @@
             }
         </script>
     </div>
-    </div>
+
     <p class="description">Ingrese el numero</p>
     <input type="text" placeholder="Numero" id="n"/>
     <button class="description" type="button" onclick="cuentaRegresiva()">Cuenta Regresiva</button>
