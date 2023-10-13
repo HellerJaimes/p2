@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ejercicio6 html</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main>
+        <h1 class="title">Ejercicios con While de C++</h1>
+        <p class="description">Ejercicio1 Validacion contraseña</p>
+        <div>
+            <script>
+                function Contraseña() {
+                    var contraseña, intento, mensaje;
+                    contraseña = "secreto";
+                    mensaje =document.getElementById("mensaje");
+                    intento = document.getElementById("contraseña").value;
+                    while (intento === contraseña) {
+                        mensaje.innerHTML = "Contraseña correcta, bienvenido";
+                    }
+                    mensaje.innerHTML = "Contraseña incorrecta, intente de nuevo.";
+                    
+                }
+            </script>
+        </div>
+        <p class="description">Ingrese la contraseña</p>
+        <input type="password" placeholder="contraseña" id="contraseña" />
+        <button class="description" type="button" onclick="Contraseña()">Iniciar sesion</button>
+        <p class="description" id="mensaje"></p>
+
+  </main>
+  <main>
+    <h1 class="title">Ejercicios con While de C++</h1>
+    <p class="description">Ejercicio3 Contar Digitos de un Numero</p>
+    <div>
+        <script>
+           function Digitos() {
+            var numero, contadorDigitos;
+            numero = parseInt(document.getElementById("numero").value);
+            contadorDigitos = 0;
+
+            while (numero > 0) {
+                contadorDigitos++;
+                numero = Math.floor(numero / 10);
+            }
+
+            document.getElementById("resultado").innerHTML = "Cantidad de dígitos en el número: " + contadorDigitos;
+         }
+    </script>
+    </div>
+    </div>
+    <input type="text" placeholder="Numero" id="numero" />
+    <button class="description" type="button" onclick="Digitos()">Calcular Digitos de un numero</button>
+    <p class="description" id="resultado"></p>  
+
+</main>
+<main>
+    <h1 class="title">Ejercicios con While de C++</h1>
+    <p class="description">Ejercicio3 Cuenta Regresiva de un Numeror</p>
+    <div>
+        <script>
+            function cuentaRegresiva() {
+                var n, cuenta;
+                n = parseInt(document.getElementById("n").value);
+                var cuenta = "";
+    
+                while (n >= 1) {    
+                    cuenta += n + "   ";
+                    n--;
+                }
+    
+                document.getElementById("cuenta").textContent = cuenta;
+            }
+        </script>
+    </div>
+    </div>
+    <p class="description">Ingrese el numero</p>
+    <input type="text" placeholder="Numero" id="n"/>
+    <button class="description" type="button" onclick="cuentaRegresiva()">Cuenta Regresiva</button>
+    <p class="description" id="cuenta"></p>  
+
+</main> 
+</body>
+</html>
