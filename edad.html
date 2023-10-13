@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ejercicio3 html</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main>
+        <h1 class="title">Calcular si es mayor o no de edad</h1>
+        <p class="description">Fecha actual</p>
+
+        <div>
+            <script>
+                var fecha1 = new Date().toLocaleDateString();
+                document.write(fecha1)
+
+                function edad() {
+                    var text, fecha1, fecha2, edad, x;
+                    fecha2 = new Date(document.getElementById("fecha2").value);// Calcula la edad en años
+                    console.log(edad);
+                    
+                    if (edad>=18) {
+                        text="Ud es mayor de edad";
+                    } else {
+                        text="Ud es menor de edad";
+                    }
+                    
+                    document.getElementById("edad").innerHTML = text;
+                }
+            </script>
+        </div>
+        <p class="description">Asigne la fecha de nacimiento</p>
+        <input type="date" placeholder="Fecha de nacimiento" id="fecha2" /> <br>
+        <button class="description" type="button" onclick="edad()">Calcular la mayoría de edad</button>
+        <p class="description" id="edad"></p>
+
+    </main>
+
+</body>
+
+</html>
