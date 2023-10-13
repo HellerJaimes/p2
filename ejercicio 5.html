@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ejercicio5 html</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main>
+        <h1 class="title">Ejercicios con For de C++</h1>
+        <p class="description">Ejercicio1 Factorial de un numero</p>
+
+
+        <div>
+            <script>
+                function Factorial() {
+                    var num,factorial, text;
+                    num = parseInt(document.getElementById("num1").value);
+                    factorial = 1;
+
+                    for (var i = 1; i <= num; i++) {
+                        factorial *= i;
+                    }
+
+                    Text = `El factorial de ${num} es ${factorial}`;
+                    document.getElementById("resultado").innerHTML = Text;
+                }
+            </script>
+        </div>
+        <p class="description">Ingrese el numero</p>
+        <input type="text" placeholder="Numero" id="num1" />
+        <button class="description" type="button" onclick="Factorial()">Calcular Descuento</button>
+        <p class="description" id="resultado"></p>  
+
+  </main>
+  <main>
+    <h1 class="title">Ejercicios con For de C++</h1>
+    <p class="description">Ejercicio2 Promedio de 5 calificaciones</p>
+    <div>
+        <script>
+            function Promedio() {
+                var numCalificaciones,suma, promedio,i,calificacion;
+                numCalificaciones = 5;
+                suma = 0;
+
+                for (i = 1;i <= numCalificaciones;i++) {
+                    calificacion = parseFloat(prompt("Ingrese la calificación " + i + ":"));
+                    suma += calificacion;
+                }
+
+                promedio = suma / numCalificaciones;
+                document.getElementById("resultado2").innerHTML = "El promedio de las calificaciones es: " + promedio;
+            }
+        </script>
+    </div>
+    </div>
+    <button class="description" type="button" onclick="Promedio()">Calcular Promedio</button>
+    <p class="description" id="resultado2"></p>  
+
+</main>
+<main>
+    <h1 class="title">Ejercicios con For de C++</h1>
+    <p class="description">Ejercicio3 Tabla de multiplicar</p>
+    <div>
+        <script>
+            function TablaMulti() {
+                var numero,tabla;
+                numero = parseInt(document.getElementById("numero").value);
+                tabla = "";
+    
+                if (!isNaN(numero)) {
+                    for (var j = 1; j <= 10; j++) {
+                        var resultado = numero * j;
+                        tabla += numero + " x " + j + " = " + resultado + "<br>";
+                    }
+                } else {
+                    tabla = "Por favor, ingrese un número válido.";
+                }
+    
+                document.getElementById("tablaMultiplicar").innerHTML = tabla;
+            }
+        </script>
+    </div>
+    </div>
+    <p class="description">Ingrese el numero</p>
+    <input type="text" placeholder="Numero" id="numero"/>
+    <button class="description" type="button" onclick="TablaMulti()">Calcular Tabla de Multiplicar</button>
+    <p class="description" id="tablaMultiplicar"></p>  
+
+</main> 
+</body>
+</html>

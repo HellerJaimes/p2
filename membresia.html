@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ejericio4 html</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <main>
+        <h1 class="title">Calculadora de Descuento de Membresía</h1>
+        <p class="description">Bienvenido a la Tienda de Helados</p>
+
+        <div>
+            <script>
+                function calcularDescuento() {
+                    var text, tipoMembresia, precio, descuento;
+                    tipoMembresia = document.getElementById("tipoMembresia").value;
+                        precio = parseFloat(document.getElementById("precio").value);
+
+                    switch (tipoMembresia) {
+                        case 'A':
+                            descuento = precio * 0.10;
+                            break;
+                        case 'B':
+                            descuento = precio * 0.15;
+                            break;
+                        case 'C':
+                            descuento = precio * 0.20;
+                            break;
+                        default:
+                            descuento = 0;
+                            break;
+                    }
+                    var precioConDescuento = precio - descuento;
+                    text = `Descuento: $${descuento.toFixed(2)}<br>Precio con Descuento: $${precioConDescuento.toFixed(2)}`;
+                    document.getElementById("resultado").innerHTML = text;
+                }
+            </script>
+        </div>
+
+        <p class="description">Seleccione su tipo de membresía:</p>
+        <select id="tipoMembresia">
+            <option value="A">Tipo A</option>
+            <option value="B">Tipo B</option>
+            <option value="C">Tipo C</option>
+        </select>
+        <p class="description">Ingrese el precio del helado:</p>
+        <input type="number" placeholder="Precio del helado" id="precio" step="0.01"> <br>
+
+        <button class="description" type="button" onclick="calcularDescuento()">Calcular Descuento</button>
+        <p class="description" id="resultado"></p>
+
+    </main>
+</body>
+</html>
