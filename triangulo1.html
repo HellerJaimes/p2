@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Calcular area y perimetro</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main>
+        <h1 class="title">Calcular Area y Perimetro</h1>
+        <p class="description">Ingrese los datos del cateto A y B</p>
+
+
+    <script type="text/javascript">
+        function Area() {
+            var x, y, Area, text, hipotenusa, perimetro, text2;
+            x = document.getElementById("A").value;
+            y = document.getElementById("B").value;
+            if (isNaN(x)) {
+                text = "Por favor ingrese datos numéricos en los campos";
+            } else {
+                hipotenusa=Math.sqrt((parseFloat(y)*parseFloat(y))+(parseFloat(x)*parseFloat(x)))
+                Area = parseFloat(x) *parseFloat(y) / (2);
+                text = Area;
+                perimetro=parseFloat(x)+parseFloat(y)+hipotenusa;
+                text2= perimetro;
+            }
+            document.getElementById("Area").innerHTML = text;
+            document.getElementById("Perimetro").innerHTML = text2;
+        }
+     
+    </script>
+    <br>
+        <input type="text" placeholder="CATETO A" id="A" /> <br>
+
+        <input type="text" id="B" placeholder="CATETO B">
+        <button class="description" type="button" onclick="Area()">Calcular Area y perimetro</button>
+            <p class="description">El area es igual a: </p>
+    <p class="description" id="Area"></p>
+    <p class="description">El Perimetro es igual a: </p>
+    <p class="description" id="Perimetro"></p>
+  </main>
+
+</body>
+
+</html>
